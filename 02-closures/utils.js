@@ -10,9 +10,13 @@
  */
 export function scheduleLogs(log) {
   for (var i = 0; i < 3; i++) {
-    setTimeout(function () {
-      log(i);
-    }, 0);
+    (function (j) {
+      //function j est une closure qui capture la valeur de i à chaque itération, donc log(j) affichera 0, 1, 2 comme attendu.
+      setTimeout(function () {
+        log(j);
+      }, 
+      0);
+    })(i);
   }
 }
 
@@ -22,7 +26,18 @@ export function scheduleLogs(log) {
  * que par ces trois méthodes.
  */
 export function createCounter(start = 0) {
-  // TODO
+  var count = start;
+  return {
+    increment: function () {
+      count++;
+    },
+    decrement: function () {
+      count--;
+    },
+    value: function () {
+      return count;
+    },
+  };
 }
 
 /**
