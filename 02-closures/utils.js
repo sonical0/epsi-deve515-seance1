@@ -12,10 +12,9 @@ export function scheduleLogs(log) {
   for (var i = 0; i < 3; i++) {
     (function (j) {
       //function j est une closure qui capture la valeur de i à chaque itération, donc log(j) affichera 0, 1, 2 comme attendu.
-      setTimeout(function () {
-        log(j);
-      }, 
-      0);
+//      setTimeout(function () {
+//        log(j);
+//      },0);
     })(i);
   }
 }
