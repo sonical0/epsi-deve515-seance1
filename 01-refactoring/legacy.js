@@ -43,7 +43,7 @@ export function totalStockValue(list) {
 export function withDefaults(options) {
   options = options || {};
   var limit = options.limit ?? 10;
-  //remplacer || par ?? a permis de résoudre le problème de la valeur 0 pour limit, qui était considérée comme "falsy" par || et donc remplacée par 10. Avec ??, on ne remplace limit que si elle est null ou undefined
+  //remplacer || par ?? a permis de résoudre le problème de la valeur 0 pour limit, qui était considérée comme "falsy" par || et donc remplacée par 10. Avec ??, on ne remplace limit que si elle est null ou undefined.
   var sort = options.sort || "name";
   return { limit: limit, sort: sort };
 }
